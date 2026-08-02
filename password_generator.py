@@ -6,21 +6,11 @@ numbers = "123456789"
 lower_letters = "qwertyuiopasdfghjklzxcvbnm"
 upper_letters = "QWERTYUIOPASDFGHJKLZXCVBNM"
 
-# password creation interactive part
-def user_char():
-
-    user_char = int(input("how many special characters do you want?: "))
-    if user_char == "1":
-        user_char_gen = random.sample(special_char, 1)
-
-    elif user_char == "2":
-        user_char_gen = random.sample(special_char, 2)
-
-    elif user_char == "3":
-        user_char_gen = random.sample(special_char, 3)
-
-    numbers_input = int(input("how many numbers do you want in your password?: "))
-    if numbers_input == "1":
-        numbers_give = random.sample(numbers, 1)
-
-    print(user_char_gen)
+random_special_char = random.sample(special_char, 3)
+random_numbers = random.sample(numbers, 7)
+random_lletters =  random.sample(lower_letters, 6)
+random_uletter = random.sample(upper_letters, 5)
+result = random_special_char + random_numbers + random_lletters + random_uletter
+random.shuffle(result)
+clean = ''.join(result)
+print(clean)
