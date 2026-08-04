@@ -1,4 +1,5 @@
 import random
+import csv
 
 # password key components
 special_char = "!@#$%^&*"
@@ -14,3 +15,8 @@ result = random_special_char + random_numbers + random_lletters + random_uletter
 random.shuffle(result)
 clean = ''.join(result)
 print(clean)
+
+with open('password.csv', 'a', newline='', encoding='utf-8') as file:
+    writer = csv.writer(file)
+
+    writer.writerow(clean)
